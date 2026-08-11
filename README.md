@@ -1,16 +1,19 @@
-# BCI-EEG Signal Simulation System
+# BCI-EEG Signal Processing System
 
-A Python-based Brain-Computer Interface (BCI) simulation system that generates real-time synthetic EEG brainwave microvolt signals (uV) and classifies them into distinct cognitive states.
+A Python-based Brain-Computer Interface (BCI) system that streams real-time EEG brainwave microvolt signals ($\mu V$) from the **PhysioNet EEG Motor Movement/Imagery Dataset** and classifies them into distinct cognitive states using signal filtering.
 
-## Features & Mind States
-* RELAXED (10-25 uV): Low activity / Resting state.
-* FOCUS (26-40 uV): Moderate focus / Standard task processing.
-* ALERT (41-50 uV): High focus / Turbo action trigger.
+## 🧠 Features & Mind States
+* **PhysioNet Integration:** Fetches real human EEG brainwave data.
+* **Signal Filtering:** Applies 1–40 Hz bandpass filtering using `mne` to remove noise.
+* **RELAXED (< 15 $\mu V$):** Low activity / Resting state (IDLE).
+* **FOCUS (15–35 $\mu V$):** Moderate activity / Standard task processing.
+* **ALERT / HIGH STRESS (> 35 $\mu V$):** High activity / Turbo action trigger.
 
-## Tech Stack
-* Language: Python 3
-* Modules: random, time
+## 🛠️ Tech Stack & Dependencies
+* **Language:** Python 3
+* **Libraries:** `mne`, `numpy`
 
-## How to Run
-1. Run bci_simulation.py in any Python 3 environment.
-2. View real-time simulated brain signal logs and corresponding action triggers.
+## 🚀 How to Run
+1. Install the required libraries:
+   ```bash
+   pip install mne numpy matplotlib
